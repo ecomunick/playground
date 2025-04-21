@@ -1,0 +1,29 @@
+# Exclude unnecessary files/folders
+1/
+.DS_Store
+__pycache__/
+*.pyc
+venv/
+# Exclude unnecessary files/folders
+1/
+.DS_Store
+__pycache__/
+*.pyc
+venv/
+.ipynb_checkpoints/
+
+# Ignore large files in specific folders
+**/data/*  # Ignore all data folders, but we will un-ignore small files explicitly below
+
+# Allow small CSV files in data_clean and data_orig folders
+!nyc_tree_2015_analysis/data_clean/*.csv
+!nyc_tree_2015_analysis/data_orig/*.csv
+
+# Ignore ZIP files in the data folders
+!stack_survey_2024/data/*.zip
+!nyc_tree_2015_analysis/data_orig/*.zip
+
+
+# Also un-ignore the README files if they're in any of those folders
+!nyc_tree_2015_analysis/data_orig/README.md
+!stack_survey_2024/README.md
