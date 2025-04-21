@@ -12,18 +12,8 @@ __pycache__/
 venv/
 .ipynb_checkpoints/
 
-# Ignore large files in specific folders
-**/data/*  # Ignore all data folders, but we will un-ignore small files explicitly below
+# Ignore large datasets
+nyc_tree_2015_analysis/data_clean/cleaned_trees_nyc2015.csv
+nyc_tree_2015_analysis/data_orig/2015_Street_Tree_Census_-_Tree_Data.csv
+stack_survey_2024/data_orig/survey_results_public.csv
 
-# Allow small CSV files in data_clean and data_orig folders
-!nyc_tree_2015_analysis/data_clean/*.csv
-!nyc_tree_2015_analysis/data_orig/*.csv
-
-# Ignore ZIP files in the data folders
-!stack_survey_2024/data/*.zip
-!nyc_tree_2015_analysis/data_orig/*.zip
-
-
-# Also un-ignore the README files if they're in any of those folders
-!nyc_tree_2015_analysis/data_orig/README.md
-!stack_survey_2024/README.md
