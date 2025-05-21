@@ -1,19 +1,48 @@
-# Exclude unnecessary files/folders
-1/
-.DS_Store
+# --- Python ---
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 *.pyc
-venv/
-# Exclude unnecessary files/folders
-1/
-.DS_Store
-__pycache__/
-*.pyc
-venv/
-.ipynb_checkpoints/
+*.pdb
 
-# Ignore large datasets
-#nyc_tree_2015_analysis/data_clean/cleaned_trees_nyc2015.csv
-nyc_tree_2015_analysis/data_orig/2015_Street_Tree_Census_-_Tree_Data.csv
-stack_survey_2024/data_orig/survey_results_public.csv
+# --- Virtual Environment ---
+.venv/
+env/
+venv/
+
+# --- Streamlit cache/config ---
+.streamlit/
+*.log
+
+# --- Jupyter / IPython ---
+.ipynb_checkpoints/
+.history
+
+
+# --- Folders or files starting with "_" ---
+_*/
+**/_*
+
+
+# --- macOS / Windows ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs / Editors ---
+.vscode/
+.idea/
+
+# --- Other ---
+*.bak
+*.swp
+*.tmp
+*.old
+*.orig
+*.log
+*.sqlite3
+secrets.txt
+
+
+*.csv
 
