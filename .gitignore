@@ -13,7 +13,7 @@ venv/
 .ipynb_checkpoints/
 
 # Ignore large datasets
-nyc_tree_2015_analysis/data_clean/cleaned_trees_nyc2015.csv
+#nyc_tree_2015_analysis/data_clean/cleaned_trees_nyc2015.csv
 nyc_tree_2015_analysis/data_orig/2015_Street_Tree_Census_-_Tree_Data.csv
 stack_survey_2024/data_orig/survey_results_public.csv
 
