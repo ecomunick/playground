@@ -1,0 +1,29 @@
+name: Publish Weekly Post
+
+on:
+  schedule:
+    - cron: '0 10 * * 1'  # Every Monday at 10:00 UTC
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Move one post from drafts to posts
+        run: |
+          draft=$(ls drafts/*.md | head -n 1)
+          if [ -n "$draft" ]; then
+            mv "$draft" posts/
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add posts/
+            git rm "$draft" || true
+            git commit -m "Auto-publish blog post: $(basename "$draft")"
+            git push
+          else
+            echo "No more draft posts to publish."
+          fi
+
