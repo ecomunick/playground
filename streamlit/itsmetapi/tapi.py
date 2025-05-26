@@ -5,7 +5,7 @@ from datetime import datetime
 # Title
 st.title("ItsmeTapi - My Data Journey")
 
-st.image("https://imgs.search.brave.com/tyTVOoRZY6yPK-hgqH1rFvtSo56YX-kOJBfnhD0ftA0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9maWxl/cy5yZWFscHl0aG9u/LmNvbS9tZWRpYS9Q/eXRob25zLU1hdGgt/TW9kdWxlLUd1aWRl/X1dhdGVybWFya2Vk/LmM4ODJlMjY3Y2Jk/MC5qcGc.jpg",
+st.image("https://realpython.com/cdn-cgi/image/width=640,format=auto/https://files.realpython.com/media/Pythons-Math-Module-Guide_Watermarked.c882e267cbd0.jpg.jpg",
              caption="(Tapioca would still approve this image!)", use_container_width=True)
 
 # Load posts from posts/ folder
