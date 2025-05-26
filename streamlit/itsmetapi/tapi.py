@@ -9,7 +9,7 @@ st.title("ItsmeTapi - My Data Journey")
 #             caption="(Tapioca would still approve this image!)", use_container_width=True)
 
 # Show the image at the top (using relative path)
-image_path = os.path.join(os.path.dirname(__file__), "pictures", "2_Pythons-Math-Module-Guide_Watermarked.c882e267cbd0.avif")
+image_path = os.path.join(os.path.dirname(__file__), "pictures", "2_Pythons-Math-Module-Guide_Watermarked.c882e267cbd0.png")
 st.image(image_path, caption="Python Math Module Guide", use_container_width=True)
 
 
