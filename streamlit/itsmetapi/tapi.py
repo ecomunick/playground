@@ -6,7 +6,7 @@ from datetime import datetime
 st.title("ItsmeTapi - My Data Journey")
 
 # Load posts from posts/ folder
-posts_dir = "posts"
+posts_dir = os.path.join(os.path.dirname(__file__), "posts")
 post_files = sorted(os.listdir(posts_dir))
 
 for post_file in post_files:
