@@ -1,6 +1,7 @@
 name: Publish Weekly Post
 
 on:
+  workflow_dispatch:  # Enables manual triggering
   schedule:
     - cron: '0 10 * * 1'  # Every Monday at 10:00 UTC
 
