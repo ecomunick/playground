@@ -1,75 +1,30 @@
 import streamlit as st
+import os
 from datetime import datetime
 
-# App Title
-st.set_page_config(page_title="ItsmeTapi - My Data Journey", layout="wide")
-st.title("Welcome to ItsmeTapi – My Data Journey Begins!")
-st.subheader("In honor of my beloved Tapioca")
+# Title
+st.title("ItsmeTapi - My Data Journey")
 
-# Image placeholder
-st.image(
-    "https://files.realpython.com/media/Polars-group_by-and-Aggregations_Watermarked.760a0c543c71.jpg",
-    caption="(Tapioca would approve this image!)",
-    use_container_width=True
-)
+# Load posts from posts/ folder
+posts_dir = "posts"
+post_files = sorted(os.listdir(posts_dir))
 
-# Blog Content
-st.markdown("""
-I call this space "ItsmeTapi" in honor of my beloved dog Tapioca, whose loyal presence always reminded me to stay grounded and playful, even in the most complex moments.
+for post_file in post_files:
+    with open(os.path.join(posts_dir, post_file), "r") as f:
+        post_content = f.read()
 
-And this is not just a blog. It’s a story of transformation, curiosity, a bit of chaos, and a lot of code. Just a few days ago, I officially dove into the deep waters of Data Science, Machine Learning, and AI through a full-time bootcamp—and what a ride it’s been so far!
+    st.markdown(f"### {post_file.replace('.md', '')}")
+    st.markdown(post_content)
+    st.markdown("---")
 
----
+    st.image("https://imgs.search.brave.com/tyTVOoRZY6yPK-hgqH1rFvtSo56YX-kOJBfnhD0ftA0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9maWxl/cy5yZWFscHl0aG9u/LmNvbS9tZWRpYS9Q/eXRob25zLU1hdGgt/TW9kdWxlLUd1aWRl/X1dhdGVybWFya2Vk/LmM4ODJlMjY3Y2Jk/MC5qcGc.jpg",
+             caption="(Tapioca would still approve this image!)", use_container_width=True)
 
-### Week 1: From Zero to API Hero (Almost)
+# Footer
+st.write(f"Written with love and Python - {datetime.now().strftime('%B %d, %Y')}")
 
-Last week, I dove head-first into the world of **Data Science, Machine Learning, and AI**—and it’s already been wild, rewarding, and exhausting!
-
-#### Here’s what I’ve explored so far:
-
-- **Basic Python Toolkit**: Lists, loops, and functions—my old friends now feel like power tools.
-- **Exploratory Data Analysis (EDA)**: With pandas and matplotlib, I became a data detective.
-- **APIs & Web Scraping**: Fetching job listings using BeautifulSoup and `requests` made me feel like a real-world coder.
-
----
-
-### Student Life Mode: Full-Time Everything
-
-From morning to afternoon, it’s bootcamp mode: lectures, notebooks, and hands-on projects. Then I switch gears in the evening and wrestle with German grammar. My brain feels like a dual-core processor—running data models on one side and reflexive verbs on the other!
-
-Yes, I’m tired. Yes, sometimes Python throws an error and I feel like throwing my laptop out the window. But I also discovered that Python can "sleep"—with `time.sleep()`—and maybe I should, too. (Seriously, sleep matters.)
-
----
-
-### Why This Blog?
-
-Because every error, every success, and every weird plot is worth remembering. I want to document my learning journey, my struggles, and my small wins. I hope it inspires others who are thinking of switching careers, diving into tech, or simply wondering: “Can I really do this?”
-
-I want to share not just the *how*, but also the *feeling* of learning something from scratch.
-
-This is my notebook, my digital garden, my tribute to Tapioca—and my way to say:
-
-> **Yes, I can do this. And so can you.**
-
----
-
-Stay tuned for code snippets, mini-projects, visualizations, and everything else I'm learning. Tapioca would be proud.
-
-Stay curious, and stay tuned!
-
-*#ItsmeTapi #DataScienceDiary #BootcampLife*
-""")
-
-# Comment Section
-st.markdown("### 💬 Leave a note on my first post!")
-note = st.text_area("Write your comment:")
+# Comments section
+note = st.text_area("Leave a note on my blog:")
 if st.button("Send"):
     st.success("Thanks for your message! 💌")
 
-# Footer
-st.markdown("---")
-# st.write(f"Written with love and Python – {datetime.now().strftime('%B %d, %Y')}")
-
-# Use a specific date
-fixed_date = datetime(2015, 5, 16)
-st.write(f"Written with love and Python - {fixed_date.strftime('%B %d, %Y')}")

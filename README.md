@@ -26,3 +26,5 @@ A personal playground for experimenting with real-world datasets and building re
 2. Place them in the appropriate `data/` folders inside each project.
 3. Run Jupyter notebooks to reproduce the analysis.
 
+Update: Trigger workflow activation
+Update: Trigger workflow activation
