@@ -6,13 +6,18 @@ import plotly.graph_objects as go
 from urllib.request import urlopen
 import json
 from copy import deepcopy
+import os
 
 @st.cache_data
 def load_data(path):
     df = pd.read_csv(path)
     return df
 
-mpg_df_raw = load_data(path="./data/mpg.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(BASE_DIR, "data", "mpg.csv")
+
+mpg_df_raw = load_data(path=data_path)
+# mpg_df_raw = load_data(path="./data/mpg.csv")
 mpg_df = deepcopy(mpg_df_raw)
 
 st.title("Introduction to Streamlit")
